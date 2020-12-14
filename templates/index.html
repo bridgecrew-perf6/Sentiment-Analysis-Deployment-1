@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>MMolnar AI Project</title>
+<style>
+body { 
+  max-width:100%;
+  height:80%;
+  font-family: 'Helvetica';
+  background-image: url('static/images/sharp_purple.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+  font-size: 16px;
+  text-align:center;
+  letter-spacing:1.4px;
+}
+.btn:hover {
+  background-color: #663399;
+  color: white;
+}
+.btn {
+  font-size: 20px;
+  max-width: 100%;
+  border-radius: 15px;
+  border:2px solid #fff;
+  padding: 10px;
+  width:900px;
+  background: transparent;
+  color:#fff;
+  box-sizing: border-box;
+}
+.topimage {
+  width:35%;
+}
+.inline-block-child{
+  display: inline-block;
+  vertical-align: top;
+  padding: 20px;
+}
+textarea {
+  background: transparent;
+  color: white;
+  resize: none;
+  font-size: 140%;
+  max-width:100%;
+  border-radius: 15px;
+  border:2px solid #fff;
+  padding: 13px;
+  width: 900px;
+  box-sizing: border-box;
+}
+</style>
+</head>
+
+<body>
+  <div class="login">
+	<h1 style='font-size: 400%;'>Machine Learning Sentiment Predictor</h1>
+  <img src = 'static/images/sentiment_image.png' class='topimage'>
+    <form action="{{ url_for('predict')}}"method="post">
+    <textarea id='your_text' name='your_text' placeholder="Enter Review Text Here" required="required" rows='6' cols='50'></textarea>
+    <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large">PREDICT SENTIMENT</button>
+    </form>
+   <center><div class = 'parent' style="width: 50%; font-size: 130%; text-align: justify; text-justify: inter-word;">
+   <br>
+   <br><center><b>{{your_text_header}}</b></center>
+   <br>{{your_text}}</center>
+   <br>
+   <br>
+   <div style='font-size:300%;'>{{prediction_text }}</div>
+   <br>
+   <div class='child inline-block-child'><img src={{url}}></div>
+   <div class="child inline-block-child" style='font-size: 175%; text-align:left'> 
+    <br>
+    <br>
+    <b>{{bottom_header}}</b>
+   <br>
+   <br>
+   {{pos_text}}
+   <br>
+   {{neu_text}}
+   <br>
+   {{neg_text}}
+   </div>
+ </div>
+ </div>
+
+</body>
+</html>
