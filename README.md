@@ -1,6 +1,5 @@
 # Use my deployed model: https://sentiment-analyzer-mm.herokuapp.com/
 
-# ai_algorithms_project
 Durham College AI Algorithms<br/>
 Machine Learning Sentiment Analysis and Key Phrase Extraction<br/><br/>
 By Michael Molnar<br/><br/><br/>
